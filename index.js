@@ -64,6 +64,7 @@ app.put('/post:id', async (req, res) => {
        
 })
 });
-app.listen(4000, () => {
+var port = process.env.PORT || 8080;
+app.listen(port, () => {
     console.log('App listening on port 4000')
 });
