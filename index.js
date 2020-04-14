@@ -40,7 +40,11 @@ app.get('/', async (req, res) => {
 app.post('/postsb', (req, res) => {
     Post.create(req.body, (error, post) => {
        // res.redirect('/')
-    })
+       if (error) return res.send(500, err);
+        
+        })
+        return res.send("success")
+    
 });
 
 app.get('/post:id', async (req, res) => {
